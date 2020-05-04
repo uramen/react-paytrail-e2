@@ -16,6 +16,8 @@ const App = () => {
   /**
    * Merchant should be fetched from your backend configuration.
    * To use this library, the ID and merchant secret is required.
+   * Don't expose the merchant ID and secret in client-side code but use a suitable
+   * framework and environment variables instead.
    * The values below are for demo usage only.
    */
   const merchant = {

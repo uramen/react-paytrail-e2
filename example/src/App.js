@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { Form } from 'react-paytrail-e2'
-import 'react-paytrail-e2/dist/index.css'
+import './index.css'
 
 /**
  * Application displaying the payment form

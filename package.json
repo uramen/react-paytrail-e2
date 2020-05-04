@@ -1,10 +1,10 @@
 {
   "name": "react-paytrail-e2",
   "version": "1.0.0",
-  "description": "E2 library",
+  "description": "React library and component for creating payments with Paytrail E2 interface.",
   "author": "nikoheikkila",
   "license": "MIT",
-  "repository": "nikoheikkila/react-paytrail-e2",
+  "repository": "https://github.com/nikoheikkila/react-paytrail-e2",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",

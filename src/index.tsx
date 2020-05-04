@@ -7,7 +7,8 @@ const Debug: React.FC<DebugProps> = ({ fields }) => {
       {fields.map(([key, value], index) => (
         <li key={index}>
           <strong>{key}:</strong>
-          {' ' + value}
+          <br />
+          <code>{' ' + value}</code>
         </li>
       ))}
     </ul>

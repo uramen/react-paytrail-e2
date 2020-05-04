@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Form } from 'react-paytrail-e2'
 import 'react-paytrail-e2/dist/index.css'
@@ -11,6 +11,8 @@ import 'react-paytrail-e2/dist/index.css'
  * For type information, see the src/typings.d.ts file in parent project.
  */
 const App = () => {
+  const [debug, toggleDebug] = useState(false)
+
   /**
    * Merchant should be fetched from your backend configuration.
    * To use this library, the ID and merchant secret is required.
@@ -95,10 +97,12 @@ const App = () => {
    */
   return (
     <div className='container'>
-      <h1>E2 Form</h1>
-      <p>Pay with me please</p>
+      <h1>Paytrail E2 Interface Form Component</h1>
+      <p>This component has been created with React, and it embeds the Paytrail's E2 payment form on this page. You can click on <em>Toggle Debug Values</em> or use the DevTools to see all the values.</p>
+      <a href="#" className="toggle-debug" onClick={() => toggleDebug(!debug)}>Toggle Debug Values</a>
+      <hr />
       <Form
-        debug
+        debug={debug}
         merchant={merchant}
         orderNumber={orderNumber}
         urls={urls}

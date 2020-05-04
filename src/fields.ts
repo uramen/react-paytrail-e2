@@ -9,7 +9,11 @@ class FieldMap extends Map {
     return this.set(key, value.toString())
   }
 
-  products(products: Product[]) {
+  addURLs(urls: URLSet) {
+    return this.add('URL_SUCCESS', urls.success.href).add('URL_CANCEL', urls.cancel.href).add('URL_NOTIFY', urls.notify?.href)
+  }
+
+  addProducts(products: Product[]) {
     products.forEach((product, index) => {
       const { id, title, price, quantity = '1', vat = '24', discount = '0', type = '1' } = product
 
@@ -25,7 +29,25 @@ class FieldMap extends Map {
     return this
   }
 
-  params() {
+  addCustomer(customer: Customer) {
+    return this.add('PAYER_PERSON_PHONE', customer?.phone)
+      .add('PAYER_PERSON_EMAIL', customer?.email)
+      .add('PAYER_PERSON_FIRSTNAME', customer?.firstName)
+      .add('PAYER_PERSON_LASTNAME', customer?.lastName)
+      .add('PAYER_COMPANY_NAME', customer?.company)
+      .add('PAYER_PERSON_ADDR_STREET', customer?.address?.street)
+      .add('PAYER_PERSON_ADDR_POSTAL_CODE', customer?.address?.postalCode)
+      .add('PAYER_PERSON_ADDR_TOWN', customer?.address?.town)
+      .add('PAYER_PERSON_ADDR_COUNTRY', customer?.address?.country)
+  }
+
+  addMessages(messages: MessageSet) {
+    return this.add('MSG_UI_MERCHANT_PANEL', messages?.merchantPanel)
+      .add('MSG_SETTLEMENT_PAYER', messages?.payer)
+      .add('MSG_UI_PAYMENT_METHOD', messages.paymentMethod)
+  }
+
+  addParams() {
     const keys = [...this.keys()].join(',')
 
     return this.add('PARAMS_IN', keys)

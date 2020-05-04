@@ -15,8 +15,6 @@ const Debug: React.FC<DebugProps> = ({ fields }) => {
 }
 
 export const Form: React.FC<FormProps> = (props) => {
-  const gateway = 'https://payment.paytrail.com/e2'
-  const method = 'post'
   const {
     merchant,
     orderNumber,
@@ -34,39 +32,29 @@ export const Form: React.FC<FormProps> = (props) => {
     debug = false,
   } = props
 
+  const gateway = 'https://payment.paytrail.com/e2'
+  const method = 'post'
   const outParameters = ['ORDER_NUMBER', 'PAYMENT_ID', 'AMOUNT', 'CURRENCY', 'PAYMENT_METHOD', 'TIMESTAMP', 'STATUS']
 
-  const fields: Mappable<string, string> = new FieldMap()
+  const fields = new FieldMap()
 
   fields
     .add('MERCHANT_ID', merchant.id)
-    .add('URL_SUCCESS', urls.success.href)
-    .add('URL_CANCEL', urls.cancel.href)
     .add('ORDER_NUMBER', orderNumber)
     .add('PARAMS_IN', 'MERCHANT_ID')
     .add('PARAMS_OUT', outParameters.join(','))
-    .add('MSG_UI_MERCHANT_PANEL', messages?.merchantPanel)
-    .add('MSG_SETTLEMENT_PAYER', messages?.payer)
-    .add('MSG_UI_PAYMENT_METHOD', messages.paymentMethod)
-    .add('URL_NOTIFY', urls.notify?.href)
     .add('LOCALE', locale)
     .add('CURRENCY', currency)
     .add('REFERENCE_NUMBER', reference)
     .add('EXPIRATION_FOR_PAYMENT_CREATION', expiresAt)
     .add('PAYMENT_METHODS', paymentMethods.join(','))
-    .add('PAYER_PERSON_PHONE', customer?.phone)
-    .add('PAYER_PERSON_EMAIL', customer?.email)
-    .add('PAYER_PERSON_FIRSTNAME', customer?.firstName)
-    .add('PAYER_PERSON_LASTNAME', customer?.lastName)
-    .add('PAYER_COMPANY_NAME', customer?.company)
-    .add('PAYER_PERSON_ADDR_STREET', customer?.address?.street)
-    .add('PAYER_PERSON_ADDR_POSTAL_CODE', customer?.address?.postalCode)
-    .add('PAYER_PERSON_ADDR_TOWN', customer?.address?.town)
-    .add('PAYER_PERSON_ADDR_COUNTRY', customer?.address?.country)
     .add('VAT_IS_INCLUDED', includeVat ? '1' : '0')
     .add('ALG', algorithm === 'sha256' ? '1' : '')
-    .products(products)
-    .params()
+    .addURLs(urls)
+    .addProducts(products)
+    .addCustomer(customer)
+    .addMessages(messages)
+    .addParams()
 
   const fieldEntries = [...fields.entries()]
 

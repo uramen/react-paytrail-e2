@@ -20,8 +20,11 @@ type Nullable<T> = T | undefined | null
 
 interface Mappable<K, V> extends Map<K, V> {
   add: (key: string, value: Nullable<string>) => this
-  products: (products: Product[]) => this
-  params: () => this
+  addURLs: (urls: URLSet) => this
+  addProducts: (products: Product[]) => this
+  addCustomer: (customer: Customer) => this
+  addParams: () => this
+  addMessages: (messages: MessageSet) => this
   authCode: (secret: string, algorithm: string) => string
 }
 
@@ -42,11 +45,7 @@ interface FormProps {
   paymentMethods?: number[]
   includeVat?: boolean
   algorithm?: 'sha256'
-  messages?: {
-    merchantPanel?: string
-    payer?: string
-    paymentMethod?: string
-  }
+  messages?: MessageSet
   expiresAt?: string
 }
 
@@ -83,4 +82,10 @@ interface Product {
   discount?: string
   vat?: string
   type?: '1' | '2' | '3'
+}
+
+interface MessageSet {
+  merchantPanel?: string
+  payer?: string
+  paymentMethod?: string
 }

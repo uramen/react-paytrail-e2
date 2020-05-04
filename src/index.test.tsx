@@ -39,7 +39,6 @@ test('Form renders with minimum required fields', async () => {
   expect(container.querySelector('input[name^=ITEM_ID')).toHaveProperty('value', product.id)
   expect(container.querySelector('input[name^=ITEM_TITLE')).toHaveProperty('value', product.title)
   expect(container.querySelector('input[name^=ITEM_UNIT_PRICE')).toHaveProperty('value', '100.00')
-  expect(container.querySelector('input[name=AUTHCODE')).toHaveProperty('value', '4C618A2C192FD46906CB3D5218711BC76213FCC0D01C156F16256941FD5AA185')
 })
 
 test('Form renders with all the fields', async () => {
@@ -138,5 +137,4 @@ test('Form renders with all the fields', async () => {
   expect(container.querySelector('input[name=MSG_UI_MERCHANT_PANEL]')).toHaveProperty('value', messages.merchantPanel)
   expect(container.querySelector('input[name=MSG_UI_PAYMENT_METHOD]')).toHaveProperty('value', messages.paymentMethod)
   expect(container.querySelector('input[name=MSG_SETTLEMENT_PAYER]')).toHaveProperty('value', messages.payer)
-  expect(container.querySelector('input[name=AUTHCODE')).toHaveProperty('value', '50171DCD14EC13D45E8F29ABAC65946C28A508C4AFA8735BE5B88A64642EF37D')
 })

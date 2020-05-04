@@ -15,16 +15,6 @@ exports[`Form renders with all the fields 1`] = `
         value="1"
       />
       <input
-        name="URL_SUCCESS"
-        type="hidden"
-        value="https://example.com/success"
-      />
-      <input
-        name="URL_CANCEL"
-        type="hidden"
-        value="https://example.com/cancel"
-      />
-      <input
         name="ORDER_NUMBER"
         type="hidden"
         value="1"
@@ -32,32 +22,12 @@ exports[`Form renders with all the fields 1`] = `
       <input
         name="PARAMS_IN"
         type="hidden"
-        value="MERCHANT_ID,URL_SUCCESS,URL_CANCEL,ORDER_NUMBER,PARAMS_IN,PARAMS_OUT,MSG_UI_MERCHANT_PANEL,MSG_SETTLEMENT_PAYER,MSG_UI_PAYMENT_METHOD,URL_NOTIFY,LOCALE,CURRENCY,REFERENCE_NUMBER,EXPIRATION_FOR_PAYMENT_CREATION,PAYMENT_METHODS,PAYER_PERSON_PHONE,PAYER_PERSON_EMAIL,PAYER_PERSON_FIRSTNAME,PAYER_PERSON_LASTNAME,PAYER_COMPANY_NAME,PAYER_PERSON_ADDR_STREET,PAYER_PERSON_ADDR_POSTAL_CODE,PAYER_PERSON_ADDR_TOWN,PAYER_PERSON_ADDR_COUNTRY,VAT_IS_INCLUDED,ALG,ITEM_TITLE[0],ITEM_ID[0],ITEM_QUANTITY[0],ITEM_UNIT_PRICE[0],ITEM_VAT_PERCENT[0],ITEM_DISCOUNT_PERCENT[0],ITEM_TYPE[0]"
+        value="MERCHANT_ID,ORDER_NUMBER,PARAMS_IN,PARAMS_OUT,LOCALE,CURRENCY,REFERENCE_NUMBER,EXPIRATION_FOR_PAYMENT_CREATION,PAYMENT_METHODS,VAT_IS_INCLUDED,ALG,URL_SUCCESS,URL_CANCEL,URL_NOTIFY,ITEM_TITLE[0],ITEM_ID[0],ITEM_QUANTITY[0],ITEM_UNIT_PRICE[0],ITEM_VAT_PERCENT[0],ITEM_DISCOUNT_PERCENT[0],ITEM_TYPE[0],PAYER_PERSON_PHONE,PAYER_PERSON_EMAIL,PAYER_PERSON_FIRSTNAME,PAYER_PERSON_LASTNAME,PAYER_COMPANY_NAME,PAYER_PERSON_ADDR_STREET,PAYER_PERSON_ADDR_POSTAL_CODE,PAYER_PERSON_ADDR_TOWN,PAYER_PERSON_ADDR_COUNTRY,MSG_UI_MERCHANT_PANEL,MSG_SETTLEMENT_PAYER,MSG_UI_PAYMENT_METHOD"
       />
       <input
         name="PARAMS_OUT"
         type="hidden"
         value="ORDER_NUMBER,PAYMENT_ID,AMOUNT,CURRENCY,PAYMENT_METHOD,TIMESTAMP,STATUS"
-      />
-      <input
-        name="MSG_UI_MERCHANT_PANEL"
-        type="hidden"
-        value="This is a message for the Merchant's Panel"
-      />
-      <input
-        name="MSG_SETTLEMENT_PAYER"
-        type="hidden"
-        value="This is a message for the customer"
-      />
-      <input
-        name="MSG_UI_PAYMENT_METHOD"
-        type="hidden"
-        value="This is a message for the payment method"
-      />
-      <input
-        name="URL_NOTIFY"
-        type="hidden"
-        value="https://example.com/notify"
       />
       <input
         name="LOCALE"
@@ -83,6 +53,66 @@ exports[`Form renders with all the fields 1`] = `
         name="PAYMENT_METHODS"
         type="hidden"
         value="1,2"
+      />
+      <input
+        name="VAT_IS_INCLUDED"
+        type="hidden"
+        value="1"
+      />
+      <input
+        name="ALG"
+        type="hidden"
+        value="1"
+      />
+      <input
+        name="URL_SUCCESS"
+        type="hidden"
+        value="https://example.com/success"
+      />
+      <input
+        name="URL_CANCEL"
+        type="hidden"
+        value="https://example.com/cancel"
+      />
+      <input
+        name="URL_NOTIFY"
+        type="hidden"
+        value="https://example.com/notify"
+      />
+      <input
+        name="ITEM_TITLE[0]"
+        type="hidden"
+        value="Test Product"
+      />
+      <input
+        name="ITEM_ID[0]"
+        type="hidden"
+        value="123"
+      />
+      <input
+        name="ITEM_QUANTITY[0]"
+        type="hidden"
+        value="1"
+      />
+      <input
+        name="ITEM_UNIT_PRICE[0]"
+        type="hidden"
+        value="100.00"
+      />
+      <input
+        name="ITEM_VAT_PERCENT[0]"
+        type="hidden"
+        value="24"
+      />
+      <input
+        name="ITEM_DISCOUNT_PERCENT[0]"
+        type="hidden"
+        value="10"
+      />
+      <input
+        name="ITEM_TYPE[0]"
+        type="hidden"
+        value="1"
       />
       <input
         name="PAYER_PERSON_PHONE"
@@ -130,54 +160,24 @@ exports[`Form renders with all the fields 1`] = `
         value="FI"
       />
       <input
-        name="VAT_IS_INCLUDED"
+        name="MSG_UI_MERCHANT_PANEL"
         type="hidden"
-        value="1"
+        value="This is a message for the Merchant's Panel"
       />
       <input
-        name="ALG"
+        name="MSG_SETTLEMENT_PAYER"
         type="hidden"
-        value="1"
+        value="This is a message for the customer"
       />
       <input
-        name="ITEM_TITLE[0]"
+        name="MSG_UI_PAYMENT_METHOD"
         type="hidden"
-        value="Test Product"
-      />
-      <input
-        name="ITEM_ID[0]"
-        type="hidden"
-        value="123"
-      />
-      <input
-        name="ITEM_QUANTITY[0]"
-        type="hidden"
-        value="1"
-      />
-      <input
-        name="ITEM_UNIT_PRICE[0]"
-        type="hidden"
-        value="100.00"
-      />
-      <input
-        name="ITEM_VAT_PERCENT[0]"
-        type="hidden"
-        value="24"
-      />
-      <input
-        name="ITEM_DISCOUNT_PERCENT[0]"
-        type="hidden"
-        value="10"
-      />
-      <input
-        name="ITEM_TYPE[0]"
-        type="hidden"
-        value="1"
+        value="This is a message for the payment method"
       />
       <input
         name="AUTHCODE"
         type="hidden"
-        value="50171DCD14EC13D45E8F29ABAC65946C28A508C4AFA8735BE5B88A64642EF37D"
+        value="2D90E557CA421B966BE7892DA224DB42FC19128708F847B28CDE16AADA17BEC6"
       />
       <button
         type="submit"
@@ -204,16 +204,6 @@ exports[`Form renders with minimum required fields 1`] = `
         value="1"
       />
       <input
-        name="URL_SUCCESS"
-        type="hidden"
-        value="https://example.com/success"
-      />
-      <input
-        name="URL_CANCEL"
-        type="hidden"
-        value="https://example.com/cancel"
-      />
-      <input
         name="ORDER_NUMBER"
         type="hidden"
         value="1"
@@ -221,17 +211,12 @@ exports[`Form renders with minimum required fields 1`] = `
       <input
         name="PARAMS_IN"
         type="hidden"
-        value="MERCHANT_ID,URL_SUCCESS,URL_CANCEL,ORDER_NUMBER,PARAMS_IN,PARAMS_OUT,URL_NOTIFY,LOCALE,CURRENCY,PAYER_PERSON_FIRSTNAME,PAYER_PERSON_LASTNAME,VAT_IS_INCLUDED,ALG,ITEM_TITLE[0],ITEM_ID[0],ITEM_QUANTITY[0],ITEM_UNIT_PRICE[0],ITEM_VAT_PERCENT[0],ITEM_DISCOUNT_PERCENT[0],ITEM_TYPE[0]"
+        value="MERCHANT_ID,ORDER_NUMBER,PARAMS_IN,PARAMS_OUT,LOCALE,CURRENCY,VAT_IS_INCLUDED,ALG,URL_SUCCESS,URL_CANCEL,URL_NOTIFY,ITEM_TITLE[0],ITEM_ID[0],ITEM_QUANTITY[0],ITEM_UNIT_PRICE[0],ITEM_VAT_PERCENT[0],ITEM_DISCOUNT_PERCENT[0],ITEM_TYPE[0],PAYER_PERSON_FIRSTNAME,PAYER_PERSON_LASTNAME"
       />
       <input
         name="PARAMS_OUT"
         type="hidden"
         value="ORDER_NUMBER,PAYMENT_ID,AMOUNT,CURRENCY,PAYMENT_METHOD,TIMESTAMP,STATUS"
-      />
-      <input
-        name="URL_NOTIFY"
-        type="hidden"
-        value="https://example.com/notify"
       />
       <input
         name="LOCALE"
@@ -244,16 +229,6 @@ exports[`Form renders with minimum required fields 1`] = `
         value="EUR"
       />
       <input
-        name="PAYER_PERSON_FIRSTNAME"
-        type="hidden"
-        value="Alice"
-      />
-      <input
-        name="PAYER_PERSON_LASTNAME"
-        type="hidden"
-        value="Angel"
-      />
-      <input
         name="VAT_IS_INCLUDED"
         type="hidden"
         value="1"
@@ -262,6 +237,21 @@ exports[`Form renders with minimum required fields 1`] = `
         name="ALG"
         type="hidden"
         value="1"
+      />
+      <input
+        name="URL_SUCCESS"
+        type="hidden"
+        value="https://example.com/success"
+      />
+      <input
+        name="URL_CANCEL"
+        type="hidden"
+        value="https://example.com/cancel"
+      />
+      <input
+        name="URL_NOTIFY"
+        type="hidden"
+        value="https://example.com/notify"
       />
       <input
         name="ITEM_TITLE[0]"
@@ -299,9 +289,19 @@ exports[`Form renders with minimum required fields 1`] = `
         value="1"
       />
       <input
+        name="PAYER_PERSON_FIRSTNAME"
+        type="hidden"
+        value="Alice"
+      />
+      <input
+        name="PAYER_PERSON_LASTNAME"
+        type="hidden"
+        value="Angel"
+      />
+      <input
         name="AUTHCODE"
         type="hidden"
-        value="4C618A2C192FD46906CB3D5218711BC76213FCC0D01C156F16256941FD5AA185"
+        value="71BFE2325324F26991B5EB92B3FE0452FEAA99DE07D556BC83674DBBB6773727"
       />
       <button
         type="submit"

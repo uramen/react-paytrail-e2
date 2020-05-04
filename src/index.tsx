@@ -1,6 +1,9 @@
 import React from 'react'
 import FieldMap from './fields'
 
+/**
+ * Debug component for displaying form inputs
+ */
 const Debug: React.FC<DebugProps> = ({ fields }) => {
   return (
     <ul>
@@ -15,7 +18,12 @@ const Debug: React.FC<DebugProps> = ({ fields }) => {
   )
 }
 
-export const Form: React.FC<FormProps> = (props) => {
+/**
+ * Form component for injecting the E2 payment form.
+ *
+ * @example ./example/App.js
+ */
+export const Form: React.FC<FormProps> = props => {
   const {
     merchant,
     orderNumber,

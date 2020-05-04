@@ -10,7 +10,8 @@ a {
   color: #e60094;
 }
 
-pre, code {
+pre,
+code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
@@ -21,7 +22,7 @@ pre, code {
 }
 
 h1 {
-  font-size: 2.0em;
+  font-size: 2em;
 }
 
 h1 + p {

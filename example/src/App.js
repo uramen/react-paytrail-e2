@@ -98,8 +98,13 @@ const App = () => {
   return (
     <div className='container'>
       <h1>Paytrail E2 Interface Form Component</h1>
-      <p>This component has been created with React, and it embeds the Paytrail's E2 payment form on this page. You can click on <em>Toggle Debug Values</em> or use the DevTools to see all the values.</p>
-      <a href="#" className="toggle-debug" onClick={() => toggleDebug(!debug)}>Toggle Debug Values</a>
+      <p>
+        This component has been created with React, and it embeds the Paytrail's E2 payment form on this page. You can click on <em>Toggle Debug Values</em> or
+        use the DevTools to see all the values.
+      </p>
+      <a href='#' className='toggle-debug' onClick={() => toggleDebug(!debug)}>
+        Toggle Debug Values
+      </a>
       <hr />
       <Form
         debug={debug}

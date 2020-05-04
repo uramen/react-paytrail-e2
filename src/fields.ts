@@ -1,6 +1,16 @@
 import shajs from 'sha.js'
 
+/**
+ * Class for containing name-value pairs to be injected into the payment form.
+ */
 class FieldMap extends Map {
+  /**
+   * Adds an arbitrary field of `name` and value of `value` to the payment form.
+   * If `value` is nullish, the operation is skipped.
+   *
+   * @param key the name for the input field
+   * @param value the value for the input field
+   */
   add(key: string, value: Nullable<string>) {
     if (value === undefined || value === null || value.length === 0) {
       return this
@@ -9,10 +19,20 @@ class FieldMap extends Map {
     return this.set(key, value.toString())
   }
 
+  /**
+   * Adds `URL_*` fields to the payment form.
+   *
+   * @param urls
+   */
   addURLs(urls: URLSet) {
     return this.add('URL_SUCCESS', urls.success.href).add('URL_CANCEL', urls.cancel.href).add('URL_NOTIFY', urls.notify?.href)
   }
 
+  /**
+   * Adds product information (`ITEM_*`) fields to the payment form.
+   *
+   * @param products
+   */
   addProducts(products: Product[]) {
     products.forEach((product, index) => {
       const { id, title, price, quantity = '1', vat = '24', discount = '0', type = '1' } = product
@@ -29,6 +49,11 @@ class FieldMap extends Map {
     return this
   }
 
+  /**
+   * Adds customer information (`PAYER_*`) fields to the payment form.
+   *
+   * @param customer
+   */
   addCustomer(customer: Customer) {
     return this.add('PAYER_PERSON_PHONE', customer?.phone)
       .add('PAYER_PERSON_EMAIL', customer?.email)
@@ -41,18 +66,33 @@ class FieldMap extends Map {
       .add('PAYER_PERSON_ADDR_COUNTRY', customer?.address?.country)
   }
 
+  /**
+   * Adds message (`MSG_*`) fields to the payment form.
+   *
+   * @param messages
+   */
   addMessages(messages: MessageSet) {
     return this.add('MSG_UI_MERCHANT_PANEL', messages?.merchantPanel)
       .add('MSG_SETTLEMENT_PAYER', messages?.payer)
       .add('MSG_UI_PAYMENT_METHOD', messages.paymentMethod)
   }
 
+  /**
+   * Generates the PARAMS_IN value from the already passed fields.
+   */
   addParams() {
     const keys = [...this.keys()].join(',')
 
     return this.add('PARAMS_IN', keys)
   }
 
+  /**
+   * Calculates the AUTHCODE from the current FieldMap values
+   *
+   * @param secret Merchant authentication hash.
+   * @param algorithm Algorithm used for hashing.
+   * @returns AUTHCODE converted to uppercase.
+   */
   authCode(secret: string, algorithm: string): string {
     const values = [secret]
     values.push(...this.values())

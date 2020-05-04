@@ -31,18 +31,10 @@ export const Form: React.FC<FormProps> = (props) => {
     includeVat = true,
     algorithm = 'sha256',
     expiresAt = '',
-    debug = false
+    debug = false,
   } = props
 
-  const outParameters = [
-    'ORDER_NUMBER',
-    'PAYMENT_ID',
-    'AMOUNT',
-    'CURRENCY',
-    'PAYMENT_METHOD',
-    'TIMESTAMP',
-    'STATUS'
-  ]
+  const outParameters = ['ORDER_NUMBER', 'PAYMENT_ID', 'AMOUNT', 'CURRENCY', 'PAYMENT_METHOD', 'TIMESTAMP', 'STATUS']
 
   const fields: Mappable<string, string> = new FieldMap()
 
@@ -85,11 +77,7 @@ export const Form: React.FC<FormProps> = (props) => {
         {fieldEntries.map(([key, value], index) => (
           <input key={index} name={key} type='hidden' value={value} />
         ))}
-        <input
-          name='AUTHCODE'
-          type='hidden'
-          value={fields.authCode(merchant.secret, algorithm)}
-        />
+        <input name='AUTHCODE' type='hidden' value={fields.authCode(merchant.secret, algorithm)} />
         <button type='submit'>Pay</button>
       </form>
     </section>

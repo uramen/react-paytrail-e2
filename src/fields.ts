@@ -11,15 +11,7 @@ class FieldMap extends Map {
 
   products(products: Product[]) {
     products.forEach((product, index) => {
-      const {
-        id,
-        title,
-        price,
-        quantity = '1',
-        vat = '24',
-        discount = '0',
-        type = '1'
-      } = product
+      const { id, title, price, quantity = '1', vat = '24', discount = '0', type = '1' } = product
 
       this.add(`ITEM_TITLE[${index}]`, title)
         .add(`ITEM_ID[${index}]`, id)

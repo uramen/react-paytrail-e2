@@ -11,7 +11,6 @@ import 'react-paytrail-e2/dist/index.css'
  * For type information, see the src/typings.d.ts file in parent project.
  */
 const App = () => {
-
   /**
    * Merchant should be fetched from your backend configuration.
    * To use this library, the ID and merchant secret is required.
@@ -19,7 +18,7 @@ const App = () => {
    */
   const merchant = {
     id: '13466',
-    secret: '6pKF4jkv97zmqBJ3ZL8gUw5DfT2NMQ'
+    secret: '6pKF4jkv97zmqBJ3ZL8gUw5DfT2NMQ',
   }
 
   /**
@@ -41,7 +40,7 @@ const App = () => {
       street: 'Test Street 1',
       postalCode: '100200',
       town: 'Helsinki',
-      country: 'FI'
+      country: 'FI',
     },
   }
 
@@ -68,7 +67,7 @@ const App = () => {
       price: 499.899,
       quantity: 1,
       discount: 10,
-      type: 1
+      type: 1,
     },
     {
       id: 2,
@@ -76,7 +75,7 @@ const App = () => {
       price: 10.0,
       quantity: 1,
       discount: 0,
-      type: 2
+      type: 2,
     },
   ]
 
@@ -95,29 +94,31 @@ const App = () => {
    * @returns Form component
    */
   return (
-  <div className="container">
-    <h1>E2 Form</h1>
-    <p>Pay with me please</p>
-    <Form
-      debug
-      merchant={merchant}
-      orderNumber={orderNumber}
-      urls={urls}
-      customer={customer}
-      products={products}
-      currency='EUR'
-      locale='fi_FI'
-      reference='RF111232'
-      paymentMethods={[1, 2]}
-      includeVat
-      expiresAt='2099-01-01T12:00:00+00:00'
-      algorithm='sha256'
-      messages={{
-        merchantPanel: "This is a message for the Merchant's Panel",
-        payer: "This is a message for the customer",
-        paymentMethod: "This is a message for the payment method",
-    }} />
-  </div>)
+    <div className='container'>
+      <h1>E2 Form</h1>
+      <p>Pay with me please</p>
+      <Form
+        debug
+        merchant={merchant}
+        orderNumber={orderNumber}
+        urls={urls}
+        customer={customer}
+        products={products}
+        currency='EUR'
+        locale='fi_FI'
+        reference='RF111232'
+        paymentMethods={[1, 2]}
+        includeVat
+        expiresAt='2099-01-01T12:00:00+00:00'
+        algorithm='sha256'
+        messages={{
+          merchantPanel: "This is a message for the Merchant's Panel",
+          payer: 'This is a message for the customer',
+          paymentMethod: 'This is a message for the payment method',
+        }}
+      />
+    </div>
+  )
 }
 
 export default App

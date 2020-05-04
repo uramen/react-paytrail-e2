@@ -7,8 +7,7 @@ declare module '*.css' {
   export default content
 }
 
-interface SvgrComponent
-  extends React.StatelessComponent<React.SVGAttributes<SVGElement>> {}
+interface SvgrComponent extends React.StatelessComponent<React.SVGAttributes<SVGElement>> {}
 
 declare module '*.svg' {
   const svgUrl: string
@@ -38,7 +37,6 @@ interface FormProps {
   products: Product[]
   debug?: boolean
   currency?: 'EUR'
-  amount?: number
   locale?: 'fi_FI' | 'sv_SE' | 'en_US'
   reference?: string
   paymentMethods?: number[]

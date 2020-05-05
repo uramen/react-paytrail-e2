@@ -35,24 +35,24 @@ test('URL fields are added with correct keys', () => {
 })
 
 test('product fields with correct keys are added', () => {
-  const products = [
+  const products: Product[] = [
     {
-      id: 1,
+      id: '1',
       title: 'Deluxe Couch',
       price: 499.899,
-      quantity: 1,
-      discount: 10,
-      vat: 24,
-      type: 1,
+      quantity: '1',
+      discount: '10',
+      vat: '24',
+      type: '1',
     },
     {
-      id: 2,
+      id: '2',
       title: 'Shipping fees',
       price: 10.0,
-      quantity: 1,
-      discount: 0,
-      vat: 24,
-      type: 2,
+      quantity: '1',
+      discount: '0',
+      vat: '24',
+      type: '2',
     },
   ]
 
@@ -116,7 +116,9 @@ test('message fields with correct keys are added', () => {
   expect(fieldMap.get('MSG_SETTLEMENT_PAYER')).toBe(messages.payer)
 })
 
-test('field PARAMS_IN is added', () => {
+test('parameter fields with correct keys are added', () => {
   fieldMap.add('MERCHANT_ID', '1').add('ORDER_NUMBER', '123').addParams()
-  expect(fieldMap.get('PARAMS_IN')).toBe('MERCHANT_ID,ORDER_NUMBER')
+
+  expect(fieldMap.get('PARAMS_IN')).toBe('MERCHANT_ID,ORDER_NUMBER,PARAMS_OUT')
+  expect(fieldMap.get('PARAMS_OUT')).toBe('ORDER_NUMBER,PAYMENT_ID,AMOUNT,CURRENCY,PAYMENT_METHOD,TIMESTAMP,STATUS')
 })

@@ -74,16 +74,18 @@ class FieldMap extends Map {
   addMessages(messages: MessageSet) {
     return this.add('MSG_UI_MERCHANT_PANEL', messages?.merchantPanel)
       .add('MSG_SETTLEMENT_PAYER', messages?.payer)
-      .add('MSG_UI_PAYMENT_METHOD', messages.paymentMethod)
+      .add('MSG_UI_PAYMENT_METHOD', messages?.paymentMethod)
   }
 
   /**
-   * Generates the PARAMS_IN value from the already passed fields.
+   * Adds the PARAMS_OUT field and generates the PARAMS_IN value from the already passed fields.
    */
   addParams() {
-    const keys = [...this.keys()].join(',')
+    const outParameters = ['ORDER_NUMBER', 'PAYMENT_ID', 'AMOUNT', 'CURRENCY', 'PAYMENT_METHOD', 'TIMESTAMP', 'STATUS']
+    this.add('PARAMS_OUT', outParameters.join(','))
 
-    return this.add('PARAMS_IN', keys)
+    const inParameters = [...this.keys()]
+    return this.add('PARAMS_IN', inParameters.join(','))
   }
 
   /**
@@ -94,10 +96,9 @@ class FieldMap extends Map {
    * @returns AUTHCODE converted to uppercase.
    */
   authCode(secret: string, algorithm: string): string {
-    const values = [secret]
-    values.push(...this.values())
+    const values = [secret, ...this.values()].join('|')
 
-    return shajs(algorithm).update(values.join('|')).digest('hex').toUpperCase()
+    return shajs(algorithm).update(values).digest('hex').toUpperCase()
   }
 }
 

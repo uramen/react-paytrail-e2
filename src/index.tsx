@@ -43,15 +43,13 @@ export const Form: React.FC<FormProps> = props => {
 
   const gateway = 'https://payment.paytrail.com/e2'
   const method = 'post'
-  const outParameters = ['ORDER_NUMBER', 'PAYMENT_ID', 'AMOUNT', 'CURRENCY', 'PAYMENT_METHOD', 'TIMESTAMP', 'STATUS']
 
   const fields = new FieldMap()
 
   fields
     .add('MERCHANT_ID', merchant.id)
     .add('ORDER_NUMBER', orderNumber)
-    .add('PARAMS_IN', 'MERCHANT_ID')
-    .add('PARAMS_OUT', outParameters.join(','))
+    .add('PARAMS_IN', ' ')
     .add('LOCALE', locale)
     .add('CURRENCY', currency)
     .add('REFERENCE_NUMBER', reference)

@@ -7,7 +7,7 @@
   </a>
 </p>
 
-> React library and component for creating payments with Paytrail E2 interface.
+> React library and component for creating payments with [Paytrail E2 Interface](https://docs.paytrail.com).
 
 ## Introduction
 
@@ -29,7 +29,7 @@ npm install --save react-paytrail-e2
 
 ## Usage
 
-The payment form component should be added to your existing.
+The payment form component should be added to your existing order page.
 
 ```jsx
 import { Form } from 'react-paytrail-e2'

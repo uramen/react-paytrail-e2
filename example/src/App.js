@@ -86,6 +86,7 @@ const App = () => {
   /**
    * Other parameters below include the following.
    *
+   * @param className - Class name passed to the rendered form to use with styling.
    * @param debug - Prints the form keys and values before the form itself. Defaults to false.
    * @param currency - Only accepted value is 'EUR'.
    * @param locale - Accepted values are 'fi_FI', 'sv_SE', and 'en_US'
@@ -110,6 +111,7 @@ const App = () => {
       </a>
       <hr />
       <Form
+        className="e2-demo"
         debug={debug}
         merchant={merchant}
         orderNumber={orderNumber}

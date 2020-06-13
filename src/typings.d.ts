@@ -33,6 +33,7 @@ interface DebugProps {
 }
 
 interface FormProps {
+  className: string
   merchant: Merchant
   orderNumber: string
   urls: URLSet

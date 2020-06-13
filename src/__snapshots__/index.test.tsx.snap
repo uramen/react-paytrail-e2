@@ -2,11 +2,10 @@
 
 exports[`Form renders with all the fields 1`] = `
 <div>
-  <section
-    class="e2-form-wrapper"
-  >
+  <div>
     <form
       action="https://payment.paytrail.com/e2"
+      class="e2-form"
       method="post"
     >
       <input
@@ -185,17 +184,16 @@ exports[`Form renders with all the fields 1`] = `
         Pay
       </button>
     </form>
-  </section>
+  </div>
 </div>
 `;
 
 exports[`Form renders with minimum required fields 1`] = `
 <div>
-  <section
-    class="e2-form-wrapper"
-  >
+  <div>
     <form
       action="https://payment.paytrail.com/e2"
+      class="e2-form"
       method="post"
     >
       <input
@@ -309,6 +307,6 @@ exports[`Form renders with minimum required fields 1`] = `
         Pay
       </button>
     </form>
-  </section>
+  </div>
 </div>
 `;

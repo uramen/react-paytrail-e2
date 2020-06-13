@@ -2,7 +2,9 @@ import React from 'react'
 import FieldMap from './fields'
 
 /**
- * Debug component for displaying form inputs
+ * Debug component for displaying form inputs.
+ * Control this component by passing the `debug` prop to the `<Form>`
+ * component.
  */
 const Debug: React.FC<DebugProps> = ({ fields }) => {
   return (
@@ -39,6 +41,7 @@ export const Form: React.FC<FormProps> = props => {
     algorithm = 'sha256',
     expiresAt = '',
     debug = false,
+    className = 'e2-form'
   } = props
 
   const gateway = 'https://payment.paytrail.com/e2'
@@ -66,15 +69,15 @@ export const Form: React.FC<FormProps> = props => {
   const fieldEntries = [...fields.entries()]
 
   return (
-    <section className='e2-form-wrapper'>
+    <div>
       {debug && <Debug fields={fieldEntries} />}
-      <form action={gateway} method={method}>
+      <form className={className} action={gateway} method={method}>
         {fieldEntries.map(([key, value], index) => (
           <input key={index} name={key} type='hidden' value={value} />
         ))}
         <input name='AUTHCODE' type='hidden' value={fields.authCode(merchant.secret, algorithm)} />
         <button type='submit'>Pay</button>
       </form>
-    </section>
+    </div>
   )
 }

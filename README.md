@@ -34,12 +34,14 @@ The payment form component should be added to your existing order page.
 ```jsx
 import { Form } from 'react-paytrail-e2'
 
-/* order page HTML */
+/* order page JSX */
 
-<Form ...props />
+<Form {...props} />
 ```
 
-See the [example React application](example/README.md) on how to pass different properties to this component.
+## Demo
+
+This project includes [a demo React application](example/src/App.js) which you can use to study the on how to pass different properties to this component.
 
 ## Contributing
 

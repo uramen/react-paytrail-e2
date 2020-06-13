@@ -105,13 +105,13 @@ const App = () => {
         This component has been created with React, and it embeds the Paytrail's E2 payment form on this page. You can click on <em>Toggle Debug Values</em> or
         use the DevTools to see all the values.
       </p>
-      {/*eslint-disable-next-line */}
+      {/* eslint-disable-next-line */}
       <a href='#' className='toggle-debug' onClick={() => toggleDebug(!debug)}>
         Toggle Debug Values
       </a>
       <hr />
       <Form
-        className="e2-demo"
+        className='e2-demo'
         debug={debug}
         merchant={merchant}
         orderNumber={orderNumber}

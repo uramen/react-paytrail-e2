@@ -1,13 +1,9 @@
 <h1 align="center">react-paytrail-e2 💸</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <img src="https://img.shields.io/badge/node-%3E%3D10-blue.svg" />
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-</p>
 
-> React library and component for creating payments with [Paytrail E2 Interface](https://docs.paytrail.com).
+[![npm version](https://badge.fury.io/js/react-paytrail-e2.svg)](https://badge.fury.io/js/react-paytrail-e2)
+![NPM](https://img.shields.io/npm/l/react-paytrail-e2?style=flat-square)
+
+> React library and component for creating payments with [Paytrail E2 Interface][e2].
 
 ## Introduction
 
@@ -52,3 +48,5 @@ First, install dependencies with `yarn`. Then invoke a _Jest_ watcher with `yarn
 **NOTE:** As of yet, there's no automated end-to-end test suite for creating a real payment. Make sure the demo application can create a new payment by click of a button and there are no interface errors.
 
 After you're satisfied with the changes and all tests pass, open a pull request to this project.
+
+[e2]: https://docs.paytrail.com/payments/e2-interface/

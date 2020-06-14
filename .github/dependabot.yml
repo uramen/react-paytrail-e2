@@ -1,0 +1,14 @@
+version: 2
+updates:
+
+  # Library
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      
+  # Demo Application
+  - package-ecosystem: "npm"
+    directory: "/example"
+    schedule:
+      interval: "daily"

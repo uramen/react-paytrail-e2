@@ -28,7 +28,7 @@ npm install --save react-paytrail-e2
 The payment form component should be added to your existing order page.
 
 ```jsx
-import { Form } from 'react-paytrail-e2'
+import { Form } from '@paytrail/react-paytrail-e2'
 
 /* order page JSX */
 

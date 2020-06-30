@@ -13,6 +13,8 @@ This library outputs a new `<form>` HTML element including all the required and 
 
 Payment may be dispatched to the service by submitting the form. Invalid parameters will instantly be caught by the payment service.
 
+⚠️ This is still a **work-in-progress**. We appreciate your help in testing the logic and fixing any defects found. See how to [contribute](#contributing).
+
 ## Install
 
 ```sh

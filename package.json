@@ -1,6 +1,6 @@
 {
   "name": "@paytrail/react-paytrail-e2",
-  "version": "2.0.0-rc3",
+  "version": "2.0.0",
   "description": "React library and component for creating payments with Paytrail E2 interface.",
   "author": "paytrail",
   "license": "MIT",

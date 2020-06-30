@@ -51,4 +51,18 @@ First, install dependencies with `yarn`. Then invoke a _Jest_ watcher with `yarn
 
 After you're satisfied with the changes and all tests pass, open a pull request to this project.
 
+## Releases
+
+Follow the steps below to release a new version:
+
+1. Checkout to the master branch and make sure tests pass
+2. Modify the `version` field in [package.json](package.json) to contain the new version bumped according to semantic versioning rules
+3. Commit this change with message `chore: bump version to <version>` (fill in the new version)
+4. Push the commit to master branch
+5. Go to the releases page on GitHub and draft a new release
+6. Fill in the release details and publish
+
+**NOTE:** GitHub Actions pipeline automatically pushes new releases to GitHub package registry when a new release is published. Currently, there's no automatic publishing to NPM registry so it has to be handled manually. Consider using a tool like [`np`][np] to handle releases.
+
 [e2]: https://docs.paytrail.com/payments/e2-interface/
+[np]: https://github.com/sindresorhus/np

@@ -55,14 +55,14 @@ After you're satisfied with the changes and all tests pass, open a pull request 
 
 Follow the steps below to release a new version:
 
-1. Checkout to the master branch and make sure tests pass
-2. Modify the `version` field in [package.json](package.json) to contain the new version bumped according to semantic versioning rules
-3. Commit this change with message `chore: bump version to <version>` (fill in the new version)
-4. Push the commit to master branch
-5. Go to the releases page on GitHub and draft a new release
-6. Fill in the release details and publish
+> **NOTE:** GitHub Actions pipeline automatically pushes new releases to GitHub package registry when a new release is published. Currently, there's no automatic publishing to NPM registry so it has to be handled manually as below.
 
-**NOTE:** GitHub Actions pipeline automatically pushes new releases to GitHub package registry when a new release is published. Currently, there's no automatic publishing to NPM registry so it has to be handled manually. Consider using a tool like [`np`][np] to handle releases.
+1. Install the [`np`][np] tool by running `npm install -g np`.
+2. Type `np` in the project root and select the version bump (_patch_, _minor_, or _major_) according to semantic versioning.
+3. See that all the automated release steps are executed successfully.
+4. Fill the GitHub Releases draft and publish the release notes.
+5. Check that [NPM][npm] contains the new version.
 
 [e2]: https://docs.paytrail.com/payments/e2-interface/
 [np]: https://github.com/sindresorhus/np
+[npm]: https://www.npmjs.com/package/@paytrail/react-paytrail-e2

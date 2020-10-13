@@ -48,6 +48,9 @@ interface FormProps {
   messages?: MessageSet
   expiresAt?: string
   className?: string
+  buttonClassName?: string
+  buttonLabel?: string
+  actionBefore?: functions
 }
 
 interface Merchant {

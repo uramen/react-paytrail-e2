@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import FieldMap from './fields'
 
 /**
@@ -42,7 +42,18 @@ export const Form: React.FC<FormProps> = props => {
     expiresAt = '',
     debug = false,
     className = 'e2-form',
+    authcode = '',
   } = props
+
+  const paytrailForm:any = React.createRef()
+
+  const onSubmit = ():void => {
+    paytrailForm.current.submit();
+  }
+
+  useEffect(() => {
+    onSubmit()
+  })
 
   const gateway = 'https://payment.paytrail.com/e2'
   const method = 'post'
@@ -71,12 +82,12 @@ export const Form: React.FC<FormProps> = props => {
   return (
     <div>
       {debug && <Debug fields={fieldEntries} />}
-      <form className={className} action={gateway} method={method}>
+      <form className={className} action={gateway} method={method} ref={paytrailForm}>
         {fieldEntries.map(([key, value], index) => (
           <input key={index} name={key} type='hidden' value={value} />
         ))}
-        <input name='AUTHCODE' type='hidden' value={fields.authCode(merchant.secret, algorithm)} />
-        <button type='submit'>Pay</button>
+        <input name='AUTHCODE' type='hidden' value={authcode || fields.authCode(merchant.secret, algorithm)} />
+        {/* <button type='submit'>Pay</button> */}
       </form>
     </div>
   )

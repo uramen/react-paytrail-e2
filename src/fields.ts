@@ -97,7 +97,7 @@ class FieldMap extends Map {
    */
   authCode(secret: string, algorithm: string): string {
     const values = [secret].concat(Array.from(this.values())).join('|')
-
+    console.log('VALUES', values)
     return shajs(algorithm).update(values).digest('hex').toUpperCase()
   }
 }

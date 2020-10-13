@@ -50,7 +50,8 @@ interface FormProps {
   className?: string
   buttonClassName?: string
   buttonLabel?: string
-  actionBefore?: functions
+  actionBefore?: functions,
+  authcode?: string,
 }
 
 interface Merchant {

@@ -1,6 +1,6 @@
 {
   "name": "react-paytrail-topfinance",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "React library and component for creating payments with Paytrail E2 interface.",
   "author": "paytrail",
   "license": "MIT",
